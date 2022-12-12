@@ -1,0 +1,33 @@
+package rzk;
+
+import javax.ejb.Stateless;
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+import javax.xml.ws.WebServiceRef;
+
+import countryInfo.CountryInfoService;
+
+/**
+ * Session Bean implementation class InformationBean
+ */
+@Stateless
+@WebService
+public class InformationBean implements InformationBeanRemote {
+	
+	@WebServiceRef(CountryInfoService.class) CountryInfoService cis;
+
+	/**
+	 * Default constructor.
+	 */
+	public InformationBean() {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	@WebMethod
+	public String getCountryInfo(String s) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Cestitke</title>
+</head>
+<body>
+	<h1>Cestitke store, Welcome!</h1>
+	
+	<br />
+	<br />
+	<h3>Napravi novu cestitku forma:</h3>
+	<br />
+	<br />
+	<form action="CestitkeServlet">
+		<label>Ime primaoca:</label>
+		<br />
+		<input type="text" name="to" placeholder="Pera..." required />
+		<br />
+		<br />
+		<label>Email primaoca:</label>
+		<br />
+		<input type="email" name="to" placeholder="pera@example.com" />
+		<br />
+		<br />
+
+	</form>	
+</body>
+</html>

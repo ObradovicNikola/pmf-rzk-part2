@@ -1,0 +1,20 @@
+package rzk;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+
+/**
+ * Session Bean implementation class InformationBean
+ */
+@Stateless
+@LocalBean
+public class InformationBean implements InformationBeanRemote {
+
+    /**
+     * Default constructor. 
+     */
+    public InformationBean() {
+        // TODO Auto-generated constructor stub
+    }
+
+}

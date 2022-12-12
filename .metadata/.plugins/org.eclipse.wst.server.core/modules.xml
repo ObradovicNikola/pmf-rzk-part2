@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<modules>
+  <module moduleId="org.eclipse.jst.jee.server:CestitkeEAR" serverId="WildFly 26 localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:CountryInfoEAR" serverId="WildFly 26 localhost"/>
+</modules>

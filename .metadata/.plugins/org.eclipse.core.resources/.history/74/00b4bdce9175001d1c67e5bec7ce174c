@@ -1,0 +1,31 @@
+package rzk.beans;
+
+import javax.annotation.Resource;
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+import javax.jms.Destination;
+
+/**
+ * Session Bean implementation class CardsBean
+ */
+@Stateless
+@LocalBean
+public class CardsBean implements CardsBeanRemote {
+	
+	@Resource(mappedName = "java:/jms/queue/KL")
+    private Destination destinationQueue;
+
+    /**
+     * Default constructor. 
+     */
+    public CardsBean() {
+        // TODO Auto-generated constructor stub
+    }
+
+	@Override
+	public boolean sendMessage(String type, String from, String to, String email) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

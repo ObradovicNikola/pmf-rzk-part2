@@ -1,0 +1,57 @@
+package rzk;
+
+import javax.ejb.Stateless;
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+import javax.xml.ws.WebServiceRef;
+
+import countryInfo.CountryInfoService;
+import countryInfo.TCountryInfo;
+import countryInfo.TCurrency;
+
+/**
+ * Session Bean implementation class InformationBean
+ */
+@Stateless
+@WebService
+public class InformationBean implements InformationBeanRemote {
+
+	@WebServiceRef(CountryInfoService.class)
+	CountryInfoService cis;
+
+	/**
+	 * Default constructor.
+	 */
+	public InformationBean() {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	@WebMethod
+	public String getCountryInfo(String isoCode) {
+
+		// use country info service to get country info
+		TCountryInfo countryInfo = cis.getCountryInfoServiceSoap().fullCountryInfo(isoCode);
+//		System.out.println("Country info1: " + countryInfo.getLanguages());
+		String language = "";
+		try {
+			language = countryInfo.getLanguages().getTLanguage().get(0).getSName();
+		} catch (Exception e) {
+			language = "language not found";
+		}
+		
+		String countryName = cis.getCountryInfoServiceSoap().countryName(isoCode);
+		String capital = cis.getCountryInfoServiceSoap().capitalCity(isoCode);
+		TCurrency currencyISO = cis.getCountryInfoServiceSoap().countryCurrency(isoCode);
+//		String currency = cis.getCountryInfoServiceSoap().currencyName();
+		String currency = currencyISO.getSName();
+
+		String info = "Your country is: " + countryName + ", the capital of " + countryName + " is " + capital
+				+ ", the language is " + language + " and the currency is " + currency + " (" + currencyISO.getSISOCode()
+				+ ")";
+
+		System.out.println("Info: " + info);
+		return info;
+	}
+
+}

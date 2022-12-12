@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;CountryInfo&apos; to &apos;CountryInfoEJB&apos;" description="Rename resource &apos;CountryInfo&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/CountryInfo" name="CountryInfoEJB" stamp="1670873511421" updateReferences="true"/>
+</session>

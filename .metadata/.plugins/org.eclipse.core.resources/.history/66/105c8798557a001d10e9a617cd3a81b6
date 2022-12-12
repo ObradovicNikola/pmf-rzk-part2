@@ -1,0 +1,9 @@
+package rzk;
+
+import javax.ejb.Remote;
+
+@Remote
+public interface InformationBeanRemote {
+	String getCountryInfo(String s);
+
+}

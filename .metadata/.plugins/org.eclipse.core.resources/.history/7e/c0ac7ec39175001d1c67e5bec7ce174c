@@ -1,0 +1,26 @@
+package rzk.beans;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+
+/**
+ * Session Bean implementation class CardsBean
+ */
+@Stateless
+@LocalBean
+public class CardsBean implements CardsBeanRemote {
+
+    /**
+     * Default constructor. 
+     */
+    public CardsBean() {
+        // TODO Auto-generated constructor stub
+    }
+
+	@Override
+	public boolean sendMessage(String type, String from, String to, String email) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}
